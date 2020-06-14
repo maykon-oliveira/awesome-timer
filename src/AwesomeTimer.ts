@@ -11,7 +11,7 @@ import {
     DAYS_POSITION,
     DAYS,
 } from './constants';
-import { ClockTimerConfig as ClockTimeConfig, Unit, TimeValues } from './types';
+import { AwesomeTimerConfig, Unit, TimeValues } from './types';
 import { calculateIntegerUnitQuotient, mod } from './utils';
 import { EventEmitter, EventTypes } from './EventEmitter';
 
@@ -30,7 +30,7 @@ const groupedUnits = {
     hours: HOURS_PER_DAY,
 };
 
-const easyTimerDefaultParams: ClockTimeConfig = {
+const easyTimerDefaultParams: AwesomeTimerConfig = {
     precision: Unit.SECONDS,
     callback: () => {
         return;
@@ -45,7 +45,7 @@ const easyTimerDefaultParams: ClockTimeConfig = {
     },
 };
 
-export class ClockTime {
+export class AwesomeTimer {
     private time = new Time();
     private totalTime = new Time();
     private clockInterval?: any;
@@ -55,8 +55,8 @@ export class ClockTime {
     private precision: Unit = Unit.SECONDS;
     private timerTypeFactor = 1;
     private clockCallback?: any;
-    private clockConfig: ClockTimeConfig = {};
-    private currentParams: ClockTimeConfig;
+    private clockConfig: AwesomeTimerConfig = {};
+    private currentParams: AwesomeTimerConfig;
     private targetValues?: TimeValues;
     private startValues: TimeValues = {};
     private countdown = false;
@@ -68,12 +68,12 @@ export class ClockTime {
         },
     };
 
-    constructor(defaultParams: ClockTimeConfig = easyTimerDefaultParams) {
+    constructor(defaultParams: AwesomeTimerConfig = easyTimerDefaultParams) {
         this.currentParams = defaultParams;
         this.setParams(defaultParams);
     }
 
-    private setParams(params: ClockTimeConfig) {
+    private setParams(params: AwesomeTimerConfig) {
         this.precision = params.precision || this.precision;
         this.countdown = params.countdown || this.countdown;
         this.clockCallback = params.callback || this.clockConfig.callback;
@@ -276,7 +276,7 @@ export class ClockTime {
         this.dispatchEvent('reset', this.eventData);
     }
 
-    private setParamsAndStartTimer(params: ClockTimeConfig) {
+    private setParamsAndStartTimer(params: AwesomeTimerConfig) {
         if (!this.isPaused()) {
             this.setParams(params);
         } else {
@@ -359,7 +359,7 @@ export class ClockTime {
         }
     }
 
-    start(params: ClockTimeConfig = this.clockConfig) {
+    start(params: AwesomeTimerConfig = this.clockConfig) {
         if (this.isRunning()) {
             return;
         }

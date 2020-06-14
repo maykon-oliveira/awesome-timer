@@ -1,3 +1,3 @@
-import { ClockTime } from './ClockTime';
+import { AwesomeTimer } from './AwesomeTimer';
 
-export default ClockTime;
+export default { AwesomeTimer };

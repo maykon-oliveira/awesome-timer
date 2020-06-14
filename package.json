@@ -6,11 +6,14 @@
         "dist"
     ],
     "main": "dist/index.js",
+    "browser": "dist/awesome-timer.min.js",
     "scripts": {
         "build": "tsc -p tsconfig.json",
         "test": "mocha -r ts-node/register test/**/*.spec.ts",
         "lint": "eslint '{src,test}/**/*.{js,ts}' --quiet --fix",
-        "ci": "npm run test & npm run build & wait"
+        "ci": "(npm run test && npm run rollup) & npm run build & wait",
+        "rollup": "rollup -c",
+        "prepublishOnly": "npm run ci && npm run rollup"
     },
     "repository": {
         "type": "git",
@@ -40,6 +43,10 @@
         "eslint-plugin-prettier": "^3.1.3",
         "mocha": "^8.0.1",
         "prettier": "^2.0.5",
+        "rollup": "^2.16.1",
+        "rollup-plugin-babel-minify": "^10.0.0",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
         "sinon": "^9.0.2",
         "ts-node": "^8.10.2",
         "typescript": "^3.9.5"

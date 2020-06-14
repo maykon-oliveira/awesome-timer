@@ -14,7 +14,7 @@ export interface TimeValues {
     days?: number;
 }
 
-export interface ClockTimerConfig {
+export interface AwesomeTimerConfig {
     precision?: Unit;
     callback?: () => void;
     countdown?: boolean;

@@ -1,15 +1,15 @@
 import { expect } from 'chai';
 import sinon, { SinonSpy, SinonFakeTimers } from 'sinon';
-import { ClockTime } from '../../src/ClockTime';
-import { Unit, TimeValues, ClockTimerConfig } from '../../src/types';
+import { AwesomeTimer } from '../../src/AwesomeTimer';
+import { Unit, TimeValues, AwesomeTimerConfig } from '../../src/types';
 import { EventTypes } from '../../src/EventEmitter';
 
-let clockTime: ClockTime;
+let clockTime: AwesomeTimer;
 let sinonFakeTimer: SinonFakeTimers;
 
 describe('EasyTimer: new instance', () => {
     beforeEach(() => {
-        clockTime = new ClockTime();
+        clockTime = new AwesomeTimer();
     });
 
     afterEach(() => {
@@ -472,7 +472,7 @@ describe('EasyTimer: new instance', () => {
                 });
 
                 it('should change show days with all the digits when days >= 100', () => {
-                    const timerWith100days = new ClockTime();
+                    const timerWith100days = new AwesomeTimer();
                     timerWith100days.start({
                         startValues: { days: 205, seconds: 30 },
                     });
@@ -514,7 +514,7 @@ describe('EasyTimer: new instance', () => {
     });
 
     describe('pause function', () => {
-        let params: ClockTimerConfig;
+        let params: AwesomeTimerConfig;
         beforeEach(() => {
             params = {
                 startValues: { seconds: 120 },
@@ -634,12 +634,12 @@ describe('EasyTimer: new instance', () => {
 
     describe('removeEventListener function', function () {
         let secondsUpdatedListener: SinonSpy;
-        let secondTimer: ClockTime;
+        let secondTimer: AwesomeTimer;
         beforeEach(function () {
             sinonFakeTimer = sinon.useFakeTimers();
             secondsUpdatedListener = sinon.spy();
             clockTime.start();
-            secondTimer = new ClockTime();
+            secondTimer = new AwesomeTimer();
             secondTimer.start();
         });
 
@@ -677,13 +677,13 @@ describe('EasyTimer: new instance', () => {
     });
 
     describe('with instance default params', () => {
-        let timer: ClockTime;
+        let timer: AwesomeTimer;
         const callback = () => {
             return;
         };
 
         beforeEach(() => {
-            timer = new ClockTime({
+            timer = new AwesomeTimer({
                 startValues: { seconds: 10 },
                 target: { seconds: 20 },
                 precision: Unit.MINUTES,
@@ -880,7 +880,7 @@ describe('EasyTimer: new instance', () => {
     });
 });
 
-const assertTimes = (timer: ClockTime, timesValues: number[], totalTimesValues: number[]) => {
+const assertTimes = (timer: AwesomeTimer, timesValues: number[], totalTimesValues: number[]) => {
     const times = timer.getTimeValues();
     const totalTimes = timer.getTotalTimeValues();
 
@@ -897,7 +897,7 @@ const assertTimes = (timer: ClockTime, timesValues: number[], totalTimesValues: 
     expect(totalTimes.days).eq(timesValues[4]);
 };
 
-const assertEventTriggered = (timer: ClockTime, event: EventTypes, millisecons: number, timesTriggered: number) => {
+const assertEventTriggered = (timer: AwesomeTimer, event: EventTypes, millisecons: number, timesTriggered: number) => {
     const callback = sinon.spy();
     timer.addEventListener(event, callback);
     sinonFakeTimer.tick(millisecons);
