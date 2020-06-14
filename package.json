@@ -1,16 +1,33 @@
 {
-    "name": "clock-time",
+    "name": "awesome-timer",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "description": "A Timer/Chronometer/Countdown library compatible with all Javascript frameworks and no dependecies",
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index.js",
     "scripts": {
         "build": "tsc -p tsconfig.json",
         "test": "mocha -r ts-node/register test/**/*.spec.ts",
-        "lint": "eslint '{src,test}/**/*.{js,ts}' --quiet --fix"
+        "lint": "eslint '{src,test}/**/*.{js,ts}' --quiet --fix",
+        "ci": "npm run test & npm run build & wait"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maykon-oliveira/awesome-timer.git"
+    },
+    "keywords": [
+        "clock",
+        "timer",
+        "chronometer",
+        "countdown"
+    ],
+    "author": "Maykon Oliveira",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/maykon-oliveira/awesome-timer/issues"
+    },
+    "homepage": "https://github.com/maykon-oliveira/awesome-timer#readme",
     "devDependencies": {
         "@types/chai": "^4.2.11",
         "@types/mocha": "^7.0.2",
