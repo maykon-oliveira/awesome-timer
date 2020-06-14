@@ -1,3 +1,3 @@
 import { AwesomeTimer } from './AwesomeTimer';
 
-export default { AwesomeTimer };
+export default AwesomeTimer;

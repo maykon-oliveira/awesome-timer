@@ -3,17 +3,18 @@
     "version": "1.1.0",
     "description": "A Timer/Chronometer/Countdown library compatible with all Javascript frameworks and no dependecies",
     "files": [
-        "dist"
+        "dist",
+        "typings"
     ],
     "main": "dist/index.js",
+    "types": "typings/index.d.ts",
     "browser": "dist/awesome-timer.min.js",
     "scripts": {
-        "build": "tsc -p tsconfig.json",
+        "build": "rollup -c",
         "test": "mocha -r ts-node/register test/**/*.spec.ts",
         "lint": "eslint '{src,test}/**/*.{js,ts}' --quiet --fix",
-        "ci": "(npm run test && npm run rollup) & npm run build & wait",
-        "rollup": "rollup -c",
-        "prepublishOnly": "npm run ci && npm run rollup"
+        "ci": "(npm run test && npm run build) & wait",
+        "prepublishOnly": "npm run ci && npm run build"
     },
     "repository": {
         "type": "git",
@@ -44,9 +45,11 @@
         "mocha": "^8.0.1",
         "prettier": "^2.0.5",
         "rollup": "^2.16.1",
+        "rollup-plugin-babel": "^4.4.0",
         "rollup-plugin-babel-minify": "^10.0.0",
         "rollup-plugin-commonjs": "^10.1.0",
         "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-typescript2": "^0.27.1",
         "sinon": "^9.0.2",
         "ts-node": "^8.10.2",
         "typescript": "^3.9.5"
