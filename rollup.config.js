@@ -9,8 +9,9 @@ export default [
     {
         input: 'src/index.ts',
         output: {
+            name: 'AwesomeTimer',
             file: path.resolve(__dirname, 'dist/index.js'),
-            format: 'cjs',
+            format: 'umd',
             sourcemap: true,
         },
         plugins: [
