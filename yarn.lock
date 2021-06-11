@@ -444,11 +444,6 @@ astral-regex@^1.0.0:
   resolved "https://registry.yarnpkg.com/astral-regex/-/astral-regex-1.0.0.tgz#6c8c3fb827dd43ee3918f27b82782ab7658a6fd9"
   integrity sha512-+Ryf6g3BKoRc7jfp7ad8tM4TtMiaWvbF/1/sQcZPkkS7ag3D5nMBCe2UfOTONtAkaG0tO0ij3C5Lwmf1EiyjHg==
 
-awesome-timer@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/awesome-timer/-/awesome-timer-1.2.0.tgz#f82a9fcaa09fff173473153b7635ecb0ee753cab"
-  integrity sha512-rWCLL7YENwJdrcJa0qeFibbh7LZRHBmBSc5M7IBEfwOi3ozcWBUAOnvpbko/t3xCSgJZ+iHobv71xbi8RBviFQ==
-
 babel-helper-evaluate-path@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/babel-helper-evaluate-path/-/babel-helper-evaluate-path-0.5.0.tgz#a62fa9c4e64ff7ea5cea9353174ef023a900a67c"
@@ -1214,9 +1209,9 @@ get-stdin@^6.0.0:
   integrity sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==
 
 glob-parent@^5.0.0, glob-parent@~5.1.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.1.tgz#b6c1ef417c4e5663ea498f1c45afac6916bbc229"
-  integrity sha512-FnI+VGOpnlGHWZxthPGR+QhR78fuiK0sNLkHQv+bL9fQi57lNNdquIbna/WrfROrolq8GK5Ek6BiMwqL/voRYQ==
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"
+  integrity sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==
   dependencies:
     is-glob "^4.0.1"
 
